@@ -1,7 +1,8 @@
 using System;
-using ReaderNS;
+using Students;
+using Readers;
 
-namespace Student
+namespace Students
 {
     public class Student 
     { 
@@ -23,7 +24,7 @@ namespace Student
     }
 }
 
-namespace ReaderNS
+namespace Readers
 { 
     public class Reader
     {
@@ -67,11 +68,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Student.Student[] students = new Student.Student[3]
+        Student[] students = new Student[3]
                 {
-                new Student.Student("Schwarzenegger A.", "98it17", 18),
-                new Student.Student("Chan J.", "99it15", 25),
-                new Student.Student("Coleman R.", "01it11", 20)
+                new Student("Schwarzenegger A.", "98it17", 18),
+                new Student("Chan J.", "99it15", 25),
+                new Student("Coleman R.", "01it11", 20)
                 };
 
         Reader[] readers = new Reader[3]
@@ -81,7 +82,7 @@ class Program
                 new Reader("Dillet P.", "928475", "Искусство", "12.04.1965", "9128474")
                 };
 
-        foreach (Student.Student student in students)
+        foreach (Student student in students)
         {
             student.PrintInfo();
         }
