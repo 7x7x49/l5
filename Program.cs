@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using ReaderNS;
 
 namespace Student
@@ -27,41 +27,41 @@ namespace ReaderNS
 { 
     public class Reader
     {
-        private string FullName;
-        public string CardNumber;
+        private string Name;
+        public string NumberOfCard;
         public string Faculty;
-        private string DateOfBirth;
+        private string Db;
         public string PhoneNumber;
 
-        public Reader(string fullName, string cardNumber, string faculty, string dateOfBirth, string phoneNumber)
-        { 
-            FullName = fullName;
-            CardNumber = cardNumber;
+        public Reader(string fullName, string numberOfCard, string faculty, string dateOfBirth, string phoneNumber)
+        {
+            Name = fullName;
+            NumberOfCard = numberOfCard;
             Faculty = faculty;
-            DateOfBirth = dateOfBirth;
+            Db = dateOfBirth;
             PhoneNumber = phoneNumber;
         }
 
         public void TakeBook(int count)
         {
-            Console.WriteLine($"{FullName} взял(а) {count} книг(и)");
+            Console.WriteLine($"{Name} взял(а) {count} книг(и)");
         }
 
         public void TakeBook(params string[] bookNames) { 
-            Console.WriteLine($"{FullName} взял(а) книги: {string.Join(", ", bookNames)}");
+            Console.WriteLine($"{Name} взял(а) книги: {string.Join(", ", bookNames)}");
         }
 
         public void ReturnBook(int count)
         {
-            Console.WriteLine($"{FullName} вернул(а) {count} книг(и)");
+            Console.WriteLine($"{Name} вернул(а) {count} книг(и)");
         }
 
         public void ReturnBook(params string[] bookNames)
         {
-            Console.WriteLine($"{FullName} вернул(а) книги: {string.Join(", ", bookNames)}");
+            Console.WriteLine($"{Name} вернул(а) книги: {string.Join(", ", bookNames)}");
         }
     }
-}
+}   
 
 class Program
 {
@@ -81,7 +81,7 @@ class Program
                 new Reader("Dillet P.", "928475", "Искусство", "12.04.1965", "9128474")
                 };
 
-        foreach (var student in students)
+        foreach (Student.Student student in students)
         {
             student.PrintInfo();
         }
